@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import ClockLoader from 'react-spinners/ClockLoader';
 
 import { useCheckout } from "../context/checkout";
 
-export const CoinFellaKYC = () => {
+export const Bp1KYC = () => {
   const { user, onProcessKyc, isProcessingKyc } = useCheckout()
   const isValid = useMemo(() => ['pending', 'rejected'].includes(user?.status) && !isProcessingKyc, [user, isProcessingKyc])
 

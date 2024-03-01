@@ -1,13 +1,13 @@
-import React, { useEffect, useMemo } from "react";
+import { useQuery } from "@apollo/client";
+import { useEffect, useMemo } from "react";
 import { Route, Routes, useSearchParams } from "react-router-dom";
-import { CoinFellaRequest } from "./request";
-import { CoinFellaSignupRouter } from "./signupRouter";
+import { toast } from "react-toastify";
 import { useCheckout } from "../context/checkout";
 import { GET_USER } from "../utils/graphql";
-import { useQuery } from "@apollo/client";
-import { toast } from "react-toastify";
+import { Bp1Request } from "./request";
+import { Bp1SignupRouter } from "./signupRouter";
 
-export const CoinFella = () => {
+export const Bp1 = () => {
   const { onSetUser } = useCheckout();
   const [params] = useSearchParams();
   const userId = useMemo(() => params.get("userId"), [params]);
@@ -42,10 +42,10 @@ export const CoinFella = () => {
           <></>
         ) : (
           <Routes>
-            <Route path="/signup/*" element={<CoinFellaSignupRouter />} />
+            <Route path="/signup/*" element={<Bp1SignupRouter />} />
             <Route
               path="/:checkoutRequestId/*"
-              element={<CoinFellaRequest />}
+              element={<Bp1Request />}
             />
           </Routes>
         )}

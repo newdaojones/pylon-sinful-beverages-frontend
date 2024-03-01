@@ -1,15 +1,15 @@
-import React, { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@apollo/client";
+import { useEffect, useMemo, useState } from "react";
 import DatePicker from "react-datepicker";
-import FadeLoader from 'react-spinners/FadeLoader';
 import PhoneInput from 'react-phone-number-input';
+import FadeLoader from 'react-spinners/FadeLoader';
 
-import { useCheckout } from "../context/checkout";
-import { useAgreement } from "../context/agreement";
-import { GET_AGREEMENT_LINK } from "../utils/graphql";
 import { stateList } from "../constants/state";
+import { useAgreement } from "../context/agreement";
+import { useCheckout } from "../context/checkout";
+import { GET_AGREEMENT_LINK } from "../utils/graphql";
 
-export const CoinFellaSignup = () => {
+export const Bp1Signup = () => {
   const { checkoutInfo, onCreateAccount, isLoading, loadingMessage } = useCheckout()
   const { values, touched, errors, setFieldValue, setFieldTouched } = checkoutInfo
   const { signedAgreementId, openAgreement } = useAgreement()
