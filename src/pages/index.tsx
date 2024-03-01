@@ -36,7 +36,7 @@ export const Bp1 = () => {
   }, [error]);
 
   return (
-    <div className="coinfella bg-black w-full h-full flex items-center justify-center">
+    <div className="bp1 bg-black w-full h-full flex items-center justify-center">
       <div className="max-w-lg w-full h-full p-2 overflow-auto">
         {requiredUser ? (
           <></>
