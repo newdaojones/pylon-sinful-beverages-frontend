@@ -1,43 +1,55 @@
-import React, { useEffect, useMemo } from "react";
+import { useQuery } from "@apollo/client";
+import { useEffect, useMemo } from "react";
 import { Route, Routes, useSearchParams } from "react-router-dom";
-import { CoinFellaRequest } from "./request";
-import { CoinFellaSignupRouter } from "./signupRouter";
+import { toast } from "react-toastify";
 import { useCheckout } from "../context/checkout";
 import { GET_USER } from "../utils/graphql";
-import { useQuery } from "@apollo/client";
-import { toast } from "react-toastify";
+import { Bp1Request } from "./request";
+import { Bp1SignupRouter } from "./signupRouter";
 
-export const CoinFella = () => {
-  const { onSetUser } = useCheckout()
-  const [params] = useSearchParams()
-  const userId = useMemo(() => params.get('userId'), [params])
+export const Bp1 = () => {
+  const { onSetUser } = useCheckout();
+  const [params] = useSearchParams();
+  const userId = useMemo(() => params.get("userId"), [params]);
   const { data, error, loading } = useQuery(GET_USER, {
     variables: {
-      userId
+      userId,
     },
-    skip: !userId
-  })
+    skip: !userId,
+  });
   const user = useMemo(() => data?.user, [data]);
-  const requiredUser = useMemo(() => !!userId && (!!error || loading || !user), [userId, error, loading, user])
+  const requiredUser = useMemo(
+    () => !!userId && (!!error || loading || !user),
+    [userId, error, loading, user]
+  );
 
   useEffect(() => {
     if (user) {
-      onSetUser(user)
+      onSetUser(user);
     }
-  }, [user, onSetUser])
+  }, [user, onSetUser]);
 
   useEffect(() => {
     if (error) {
-      toast.error(error.message)
+      toast.error(error.message);
     }
-  }, [error])
+  }, [error]);
 
-  return <div className="coinfella bg-black w-full h-full flex items-center justify-center">
-    <div className="max-w-lg w-full h-full p-2 overflow-auto">
-      {requiredUser ? <></> : <Routes>
-        <Route path="/signup/*" element={<CoinFellaSignupRouter />} />
-        <Route path="/:checkoutRequestId/*" element={<CoinFellaRequest />} />
-      </Routes>}
+  return (
+    <div className="bp1 bg-black w-full h-full flex items-center justify-center">
+      <div className="max-w-lg w-full h-full p-2 overflow-auto">
+        {requiredUser ? (
+          <></>
+        ) : (
+          <Routes>
+            <Route path="/signup/*" element={<Bp1SignupRouter />} />
+            <Route
+              path="/:checkoutRequestId/*"
+              element={<Bp1Request />}
+            />
+          </Routes>
+        )}
+      </div>
     </div>
-  </div>
-}
+  );
+};
