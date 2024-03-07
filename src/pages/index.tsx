@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo } from "react";
+import { useQuery } from "@apollo/client";
+import { useEffect, useMemo } from "react";
 import { Route, Routes, useSearchParams } from "react-router-dom";
-import { CoinFellaRequest } from "./request";
-import { CoinFellaSignupRouter } from "./signupRouter";
+import { toast } from "react-toastify";
 import { useCheckout } from "../context/checkout";
 import { GET_USER } from "../utils/graphql";
-import { useQuery } from "@apollo/client";
-import { toast } from "react-toastify";
+import { Bp1Request } from "./request";
+import { Bp1SignupRouter } from "./signupRouter";
 
 export const CoinFella = () => {
   const { onSetUser } = useCheckout();

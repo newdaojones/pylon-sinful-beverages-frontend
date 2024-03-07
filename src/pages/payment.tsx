@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
 import { CardNumber, Cvv, ExpiryDate, Frames } from 'frames-react';
+import { useEffect, useRef, useState } from "react";
 import ClockLoader from 'react-spinners/ClockLoader';
 
 import { useCheckout } from "../context/checkout";
 import { checkoutConfig } from "../utils/checkout";
 
-export const CoinFellaPayment = () => {
+export const Bp1Payment = () => {
   const ref = useRef<any>()
   const [isLoading, setIsLoading] = useState(false);
 

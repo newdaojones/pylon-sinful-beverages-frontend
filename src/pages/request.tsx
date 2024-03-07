@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useCheckout } from "../context/checkout";
-import { CoinFellaInformation } from "./info";
-import { CoinFellaPayment } from "./payment";
-import { CoinFellaTransaction } from "./transaction";
+import { Bp1Information } from "./info";
+import { Bp1Payment } from "./payment";
+import { Bp1Transaction } from "./transaction";
 
-export const CoinFellaRequest = () => {
+export const Bp1Request = () => {
   const {
     setRequestId,
     checkout,
@@ -26,9 +26,9 @@ export const CoinFellaRequest = () => {
   }, [checkout, navigate, location])
 
   return <Routes>
-    <Route path="/info" element={<CoinFellaInformation />} />
-    <Route path="/payment" element={<CoinFellaPayment />} />
-    <Route path="/transaction" element={<CoinFellaTransaction />} />
+    <Route path="/info" element={<Bp1Information />} />
+    <Route path="/payment" element={<Bp1Payment />} />
+    <Route path="/transaction" element={<Bp1Transaction />} />
     <Route
       path="/*"
       element={<Navigate to={"./info"} replace />}
