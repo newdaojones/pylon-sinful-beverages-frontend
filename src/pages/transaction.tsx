@@ -10,7 +10,7 @@ import { useCheckout } from "../context/checkout";
 import { calcTip } from "../utils";
 const explorerUri = process.env.REACT_APP_EXPLORER_URL || 'https://mumbai.polygonscan.com'
 
-export const Bp1Transaction = () => {
+export const SinfulTransaction = () => {
   const { checkoutInfo, transaction, checkoutRequest, onRetry } = useCheckout()
   const { values } = checkoutInfo
   const tipAmount = useMemo(() => calcTip(values), [values]);

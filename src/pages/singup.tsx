@@ -9,7 +9,7 @@ import { useAgreement } from "../context/agreement";
 import { useCheckout } from "../context/checkout";
 import { GET_AGREEMENT_LINK } from "../utils/graphql";
 
-export const Bp1Signup = () => {
+export const SinfulSignup = () => {
   const { checkoutInfo, onCreateAccount, isLoading, loadingMessage } = useCheckout()
   const { values, touched, errors, setFieldValue, setFieldTouched } = checkoutInfo
   const { signedAgreementId, openAgreement } = useAgreement()

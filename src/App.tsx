@@ -9,7 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { AuthProvider } from './context/auth';
 import { CheckoutProvider } from './context/checkout';
-import { Bp1 } from './pages';
+import { Sinful } from './pages';
 import { AgreementAccept } from './pages/agreementAccept';
 import { KybSuccess } from './pages/kybSucess';
 import { KycSuccess } from './pages/kycSucess';
@@ -26,7 +26,7 @@ function App() {
               <Route path='/kyc-success' element={<KycSuccess />} />
               <Route path='/kyb-success/:partnerId' element={<KybSuccess />} />
               <Route path='/agreement-accept' element={<AgreementAccept />} />
-              <Route path='/*' element={<Bp1 />} />
+              <Route path='/*' element={<Sinful />} />
             </Routes>
           </CheckoutProvider>
           <ToastContainer />

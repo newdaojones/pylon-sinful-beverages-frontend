@@ -5,7 +5,7 @@ import ClockLoader from 'react-spinners/ClockLoader';
 import { useCheckout } from "../context/checkout";
 import { checkoutConfig } from "../utils/checkout";
 
-export const Bp1Payment = () => {
+export const SinfulPayment = () => {
   const ref = useRef<any>()
   const [isLoading, setIsLoading] = useState(false);
 

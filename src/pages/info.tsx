@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { stateList } from "../constants/state";
 import { useCheckout } from "../context/checkout";
 
-export const Bp1Information = () => {
+export const SinfulInformation = () => {
   const navigate = useNavigate();
 
   const { checkoutInfo } = useCheckout()

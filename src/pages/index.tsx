@@ -4,10 +4,10 @@ import { Route, Routes, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useCheckout } from "../context/checkout";
 import { GET_USER } from "../utils/graphql";
-import { Bp1Request } from "./request";
-import { Bp1SignupRouter } from "./signupRouter";
+import { SinfulRequest } from "./request";
+import { SinfulSignupRouter } from "./signupRouter";
 
-export const Bp1 = () => {
+export const Sinful = () => {
   const { onSetUser } = useCheckout();
   const [params] = useSearchParams();
   const userId = useMemo(() => params.get("userId"), [params]);
@@ -36,16 +36,16 @@ export const Bp1 = () => {
   }, [error]);
 
   return (
-    <div className="bp1 bg-black w-full h-full flex items-center justify-center">
+    <div className="sinful bg-black w-full h-full flex items-center justify-center">
       <div className="max-w-lg w-full h-full p-2 overflow-auto">
         {requiredUser ? (
           <></>
         ) : (
           <Routes>
-            <Route path="/signup/*" element={<Bp1SignupRouter />} />
+            <Route path="/signup/*" element={<SinfulSignupRouter />} />
             <Route
               path="/:checkoutRequestId/*"
-              element={<Bp1Request />}
+              element={<SinfulRequest />}
             />
           </Routes>
         )}

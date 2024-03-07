@@ -3,7 +3,7 @@ import ClockLoader from 'react-spinners/ClockLoader';
 
 import { useCheckout } from "../context/checkout";
 
-export const Bp1KYC = () => {
+export const SinfulKYC = () => {
   const { user, onProcessKyc, isProcessingKyc } = useCheckout()
   const isValid = useMemo(() => ['pending', 'rejected'].includes(user?.status) && !isProcessingKyc, [user, isProcessingKyc])
 
