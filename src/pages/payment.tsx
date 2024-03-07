@@ -123,38 +123,6 @@ export const CoinFellaPayment = () => {
       {touched.cardBrand && errors.cardBrand ? <div className='text-red-400 text-[12px] text-left'>{errors.cardBrand}</div>
         : touched.cardBin && errors.cardBin ? <div className='text-red-400 text-[12px] text-left'>{errors.cardBin}</div>
           : touched.isValidCard && errors.isValidCard && <div className='text-red-400 text-[12px] text-left'>{errors.isValidCard}</div>}
-      <div className="flex mt-6">
-        <div className="flex-1">
-          <p className="text-gray-200 text-md text-left mb-2">Add a tip?</p>
-          <div className="flex gap-4">
-            <div
-              className={`cursor-pointer border-2 border-gray-300 rounded-md h-11 w-14 flex items-center justify-center text-lg shadow-sm placeholder-gray-300 ${values.tipType === 'percent' && values.tipAmount === '5' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
-              onClick={() => onChangeTip('5', 'percent')}
-            >5%</div>
-            <div
-              className={`cursor-pointer border-2 border-gray-300 rounded-md h-11 w-14 flex items-center justify-center text-lg shadow-sm p-2 placeholder-gray-300 ${values.tipType === 'percent' && values.tipAmount === '10' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
-              onClick={() => onChangeTip('10', 'percent')}
-            >10%</div>
-            <div
-              className={`cursor-pointer border-2 border-gray-300 rounded-md h-11 w-14 flex items-center justify-center text-lg shadow-sm p-2 placeholder-gray-300 ${values.tipType === 'percent' && values.tipAmount === '15' ? 'bg-white text-black' : 'bg-transparent text-white'}`}
-              onClick={() => onChangeTip('15', 'percent')}
-            >15%</div>
-            <div
-              className={`flex-1 cursor-pointer border-2 border-gray-300 rounded-md h-11 flex items-center justify-center text-lg shadow-sm p-2 placeholder-gray-300 ${values.tipType === 'cash' ? 'border-white' : 'border-gray-300'}`}
-            >
-              <div className="mr-1 text-white">$</div>
-              <input
-                value={values.tipType === 'percent' ? '' : values.tipAmount}
-                onChange={(e) => onChangeTip(e.target.value, 'cash')}
-                type="number"
-                onBlur={() => setFieldTouched('tipAmount', true)}
-                className={`outline-none bg-transparent flex-1 placeholder-gray-300 text-white`}
-                placeholder="Add Your Own"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="mt-6 mb-2 text-left">
         <label className="text-white text-xs cursor-pointer select-none">
           <input className="checkbox" type="checkbox" checked={values.isConfirmedPurchase} onChange={(e) => setFieldValue('isConfirmedPurchase', e.target.checked)} />
