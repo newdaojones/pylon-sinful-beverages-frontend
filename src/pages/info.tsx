@@ -35,28 +35,28 @@ export const SinfulInformation = () => {
   }, [errors, values])
 
   return <div className="pt-3">
-    <h3 className="text-white text-xl">Information</h3>
-    <div className="border-b-2 border-gray-300 mt-4 mb-5"></div>
+    <h3 className="text-black text-xl">Information</h3>
+    <div className="border-b-2 border-black mt-4 mb-5"></div>
     <div className="flex flex-col gap-2">
       <div className="flex gap-2">
         <div className="flex-1">
-          <p className="text-gray-200 text-md text-left mb-2">First Name</p>
+          <p className="text-black text-md text-left mb-2">First Name</p>
           <input
             value={values.firstName}
             onBlur={() => setFieldTouched('firstName', true)}
             onChange={(e) => setFieldValue('firstName', e.target.value)}
-            className="outline-none border-2 border-gray-300 rounded-md h-11 w-full flex items-center justify-center text-white text-lg shadow-sm bg-transparent p-2 placeholder-gray-300"
+            className="outline-none border-2 border-black rounded-md h-11 w-full flex items-center justify-center text-black text-lg shadow-sm bg-transparent p-2 placeholder-gray-400"
             placeholder="Sam"
           />
           {touched.firstName && errors.firstName && <div className='text-red-400 text-[12px] text-left'>{errors.firstName}</div>}
         </div>
         <div className="flex-1">
-          <p className="text-gray-200 text-md text-left mb-2">Last Name</p>
+          <p className="text-black text-md text-left mb-2">Last Name</p>
           <input
             value={values.lastName}
             onBlur={() => setFieldTouched('lastName', true)}
             onChange={(e) => setFieldValue('lastName', e.target.value)}
-            className="outline-none border-2 border-gray-300 rounded-md h-11 w-full flex items-center justify-center text-white text-lg shadow-sm bg-transparent p-2 placeholder-gray-300"
+            className="outline-none border-2 border-black rounded-md h-11 w-full flex items-center justify-center text-black text-lg shadow-sm bg-transparent p-2 placeholder-gray-400"
             placeholder="Smith"
           />
           {touched.lastName && errors.lastName && <div className='text-red-400 text-[12px] text-left'>{errors.lastName}</div>}
@@ -64,25 +64,25 @@ export const SinfulInformation = () => {
       </div>
       <div className="flex gap-2">
         <div className="flex-1">
-          <p className="text-gray-200 text-md text-left mb-2">Email</p>
+          <p className="text-black text-md text-left mb-2">Email</p>
           <input
             value={values.email}
             type="email"
             onBlur={() => setFieldTouched('email', true)}
             onChange={(e) => setFieldValue('email', e.target.value)}
-            className="outline-none border-2 border-gray-300 rounded-md h-11 w-full flex items-center justify-center text-white text-lg shadow-sm bg-transparent p-2 placeholder-gray-300"
+            className="outline-none border-2 border-black rounded-md h-11 w-full flex items-center justify-center text-black text-lg shadow-sm bg-transparent p-2 placeholder-gray-400"
             placeholder="sam@gmail.com"
           />
           {touched.email && errors.email && <div className='text-red-400 text-[12px] text-left'>{errors.email}</div>}
         </div>
         <div className="flex-1">
-          <p className="text-gray-200 text-md text-left mb-2">Mobile Number</p>
-          <div className="outline-none border-2 border-gray-300 rounded-md h-11 w-full flex items-center justify-center text-white text-lg shadow-sm bg-transparent p-2 placeholder-gray-300">
+          <p className="text-black text-md text-left mb-2">Mobile Number</p>
+          <div className="outline-none border-2 border-black rounded-md h-11 w-full flex items-center justify-center text-black text-lg shadow-sm bg-transparent p-2 placeholder-gray-400">
             <PhoneInput
               defaultCountry="US"
               placeholder="(123) 456-7890"
               autoComplete="off"
-              className="placeholder-gray-300"
+              className="placeholder-gray-400"
               onBlur={() => setFieldTouched('phoneNumber', true)}
               value={values.phoneNumber}
               onChange={(e) => setFieldValue('phoneNumber', e)}
@@ -93,20 +93,20 @@ export const SinfulInformation = () => {
       </div>
       <div className="flex gap-2">
         <div className="flex-1">
-          <p className="text-gray-200 text-md text-left mb-2">Country</p>
+          <p className="text-black text-md text-left mb-2">Country</p>
           <input
             value={values.country}
             disabled
             onBlur={() => setFieldTouched('country', true)}
             onChange={(e) => setFieldValue('country', e.target.value)}
-            className="outline-none border-2 border-gray-300 rounded-md h-11 w-full flex items-center justify-center text-white text-lg shadow-sm bg-transparent p-2 placeholder-gray-300"
+            className="outline-none border-2 border-black rounded-md h-11 w-full flex items-center justify-center text-black text-lg shadow-sm bg-transparent p-2 placeholder-gray-400"
             placeholder="USA"
           />
           {touched.country && errors.country && <div className='text-red-400 text-[12px] text-left'>{errors.country}</div>}
         </div>
 		<div className="flex-1">
-			<p className="text-gray-200 text-md text-left mb-2">State</p>
-			<div className="outline-none border-2 border-gray-300 rounded-md h-11 w-full flex items-center justify-center text-white text-lg shadow-sm bg-transparent p-2">
+			<p className="text-black text-md text-left mb-2">State</p>
+			<div className="outline-none border-2 border-black rounded-md h-11 w-full flex items-center justify-center text-black text-lg shadow-sm bg-transparent p-2">
 				<select
 				value={values.state}
 				onBlur={() => setFieldTouched('state', true)}
@@ -124,23 +124,23 @@ export const SinfulInformation = () => {
       </div>
       <div className="flex gap-2">
         <div className="flex-1">
-          <p className="text-gray-200 text-md text-left mb-2">Postal Code</p>
+          <p className="text-black text-md text-left mb-2">Postal Code</p>
           <input
             value={values.postalCode}
             onBlur={() => setFieldTouched('postalCode', true)}
             onChange={(e) => setFieldValue('postalCode', e.target.value)}
-            className="outline-none border-2 border-gray-300 rounded-md h-11 w-full flex items-center justify-center text-white text-lg shadow-sm bg-transparent p-2 placeholder-gray-300"
+            className="outline-none border-2 border-black rounded-md h-11 w-full flex items-center justify-center text-black text-lg shadow-sm bg-transparent p-2 placeholder-gray-400"
             placeholder="10001"
           />
           {touched.postalCode && errors.postalCode && <div className='text-red-400 text-[12px] text-left'>{errors.postalCode}</div>}
         </div>
         <div className="flex-1">
-          <p className="text-gray-200 text-md text-left mb-2">City</p>
+          <p className="text-black text-md text-left mb-2">City</p>
           <input
             value={values.city}
             onBlur={() => setFieldTouched('city', true)}
             onChange={(e) => setFieldValue('city', e.target.value)}
-            className="outline-none border-2 border-gray-300 rounded-md h-11 w-full flex items-center justify-center text-white text-lg shadow-sm bg-transparent p-2 placeholder-gray-300"
+            className="outline-none border-2 border-black rounded-md h-11 w-full flex items-center justify-center text-black text-lg shadow-sm bg-transparent p-2 placeholder-gray-400"
             placeholder="San Francisco"
           />
           {touched.city && errors.city && <div className='text-red-400 text-[12px] text-left'>{errors.city}</div>}
@@ -148,12 +148,12 @@ export const SinfulInformation = () => {
       </div>
       <div className="flex">
         <div className="flex-1">
-          <p className="text-gray-200 text-md text-left mb-2">Address</p>
+          <p className="text-black text-md text-left mb-2">Address</p>
           <input
             value={values.streetAddress}
             onBlur={() => setFieldTouched('streetAddress', true)}
             onChange={(e) => setFieldValue('streetAddress', e.target.value)}
-            className="outline-none border-2 border-gray-300 rounded-md h-11 w-full flex items-center justify-center text-white text-lg shadow-sm bg-transparent p-2 placeholder-gray-300"
+            className="outline-none border-2 border-black rounded-md h-11 w-full flex items-center justify-center text-black text-lg shadow-sm bg-transparent p-2 placeholder-gray-400"
             placeholder="100 King Street"
           />
           {touched.streetAddress && errors.streetAddress && <div className='text-red-400 text-[12px] text-left'>{errors.streetAddress}</div>}
@@ -161,7 +161,7 @@ export const SinfulInformation = () => {
       </div>
       <button
         onClick={() => !isInValid && navigate('../payment')}
-        className={`mt-4 text-lg text-center w-full rounded-md h-12 border-2 border-white flex items-center justify-center ${!isInValid ? 'bg-white text-black' : 'text-gray-300'}`}
+        className={`mt-4 text-lg text-center w-full rounded-md h-12 border-2 border-black flex items-center justify-center ${!isInValid ? 'bg-white text-black' : 'text-gray-400'}`}
       >
         <div className="flex items-center">
           Next

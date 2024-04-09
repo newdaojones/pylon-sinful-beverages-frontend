@@ -30,6 +30,7 @@ export const SinfulTransaction = () => {
     }
   }, [checkoutRequest, transaction])
 
+
   return <div className="pt-3">
     <h3 className="text-white text-xl">Transaction</h3>
     <div className="border-b-2 border-gray-300 mt-4 mb-5"></div>
